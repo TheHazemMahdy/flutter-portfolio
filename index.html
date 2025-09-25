@@ -6,6 +6,8 @@
   <title>Hazem Mahdy | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
     :root {
       --bg-gradient: linear-gradient(135deg, #4facfe 0%, #f093fb 100%);
@@ -27,13 +29,10 @@
       z-index:1000;
     }
     nav a {
-      text-decoration:none; font-weight:600;
-      background: linear-gradient(90deg, #4facfe, #f093fb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: opacity 0.3s;
+      text-decoration:none; font-weight:600; color:var(--text-dark);
+      transition:color 0.3s;
     }
-    nav a:hover { opacity:0.7; }
+    nav a:hover { color:var(--accent); }
 
     /* HERO */
     header {
@@ -61,19 +60,9 @@
 
     /* SECTIONS */
     .section { max-width:1100px; margin:auto; padding:4rem 2rem; }
-    .section h2 { text-align:center; margin-bottom:2rem; font-size:2rem; display:flex; align-items:center; justify-content:center; gap:0.6rem; }
-
-    /* ICON ANIMATIONS */
-    .icon { background: linear-gradient(90deg, #4facfe, #f093fb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    .bounce { animation: bounce 2s infinite; }
-    .pulse { animation: pulse 2s infinite; }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+    .section h2 {
+      text-align:center; margin-bottom:2rem; font-size:2rem;
+      display:flex; align-items:center; justify-content:center; gap:0.6rem;
     }
 
     /* CARDS */
@@ -156,7 +145,10 @@
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <h2><i class="fas fa-user icon bounce"></i> About Me</h2>
+    <h2>
+      <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      About Me
+    </h2>
     <p>
       Passionate and detail-oriented Flutter Developer with hands-on experience in building high-performance,
       cross-platform mobile applications for Android and iOS. Skilled in Dart programming, state management,
@@ -166,7 +158,10 @@
 
   <!-- SKILLS -->
   <section class="section" id="skills">
-    <h2><i class="fas fa-code icon pulse"></i> Skills</h2>
+    <h2>
+      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_1pxqjqps.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      Skills
+    </h2>
     <div class="grid">
       <div class="card"><h3>Languages</h3><p>Dart, Python, Java, C++</p></div>
       <div class="card"><h3>Frameworks & Tools</h3><p>Flutter, Firebase, REST APIs, Git/GitHub, Android Studio</p></div>
@@ -177,7 +172,10 @@
 
   <!-- PROJECTS -->
   <section class="section" id="projects">
-    <h2><i class="fas fa-laptop-code icon pulse"></i> Projects</h2>
+    <h2>
+      <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_t24tpvcu.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      Projects
+    </h2>
     <div class="grid">
       <div class="card project">
         <img src="https://lh3.googleusercontent.com/w6DdFmSytcPQJKfDCaiOE-qbp3NtHWlZjNgD4dQKKTqFBvYaLJFhl760vEDfh7H0c9I=h900" alt="Expense Manager">
@@ -202,7 +200,10 @@
 
   <!-- EDUCATION -->
   <section class="section" id="education">
-    <h2><i class="fas fa-graduation-cap icon bounce"></i> Education & Experience</h2>
+    <h2>
+      <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_jbrw3hcz.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      Education & Experience
+    </h2>
     <div class="grid">
       <div class="card"><h3>Alexandria University</h3><p>Faculty of Computer and Data Science, CGPA 3.7<br>(2023–2027 Expected)</p></div>
       <div class="card"><h3>Internship – Control Union Egypt</h3><p>Data Analyst | June – September 2025</p></div>
@@ -211,7 +212,10 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2><i class="fas fa-envelope icon pulse"></i> Contact</h2>
+    <h2>
+      <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_w51pcehl.json" background="transparent" speed="1" style="width:40px;height:40px" loop autoplay></lottie-player>
+      Contact
+    </h2>
     <div class="contact-grid">
       <div class="contact-info">
         <p>I’m open to internships, freelance projects, and collaborations in app development.</p>
