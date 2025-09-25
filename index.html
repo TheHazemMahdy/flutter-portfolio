@@ -4,90 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hazem Mahdy | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --accent: #06b6d4;
-      --accent2: #7c3aed;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
+      --bg-gradient: linear-gradient(135deg, #4facfe 0%, #f093fb 100%);
+      --card: #ffffff;
+      --accent: #4facfe;
+      --accent2: #f093fb;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
     }
+
+    /* Header */
     header {
-      position: sticky;
-      top: 0;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
+      position: fixed;
+      top:0; left:0; right:0;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display:flex; justify-content:space-between; align-items:center;
       padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
+      z-index:100;
     }
-    header h1 { font-size: 1.5rem; color: var(--accent); }
+    header h1 { font-size:1.4rem; background:var(--bg-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
     nav a {
-      color: var(--text);
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 600;
+      margin-left:1rem; text-decoration:none; font-weight:600; color:var(--text-dark);
       transition: color 0.3s;
     }
-    nav a:hover { color: var(--accent2); }
+    nav a:hover { color: var(--accent); }
 
-    .section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 4rem 2rem;
-    }
+    /* Sections */
+    .section { max-width:1100px; margin:auto; padding:6rem 2rem; }
     .hero {
-      text-align: center;
+      min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center;
       animation: fadeIn 1.5s ease;
     }
-    .hero h2 { font-size: 2.2rem; }
-    .hero p { color: var(--muted); margin-top: 1rem; }
+    .hero h2 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { font-size:1.1rem; color:var(--text-light); max-width:700px; }
 
+    .btn {
+      display:inline-block; margin-top:2rem; padding:0.75rem 1.5rem;
+      background: var(--bg-gradient); color:white; font-weight:600; border-radius:50px;
+      text-decoration:none; transition: transform 0.3s;
+    }
+    .btn:hover { transform: scale(1.05); }
+
+    /* Cards */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:2rem; }
     .card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background:var(--card); border-radius:16px; padding:1.5rem;
+      box-shadow:0 10px 20px rgba(0,0,0,0.1);
+      opacity:0; transform:translateY(30px);
+      transition: all 0.6s ease;
     }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    }
+    .card.visible { opacity:1; transform:translateY(0); }
+    .card h3 { margin-bottom:0.5rem; }
+    .card p { color:var(--text-light); }
 
-    .skills-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
+    /* Projects */
     .project img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      width:100%; border-radius:12px; margin-bottom:1rem;
+      transition: transform 0.3s;
+    }
+    .project img:hover { transform: scale(1.05); }
+    .project a {
+      display:inline-block; margin-top:0.5rem; color:var(--accent); text-decoration:none; font-weight:600;
     }
 
+    /* Footer */
     footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-      border-top: 1px solid #1e293b;
+      text-align:center; padding:2rem; color:var(--text-light);
+      background: rgba(255,255,255,0.5);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* Animations */
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
   </style>
 </head>
 <body>
@@ -103,71 +100,56 @@
   </header>
 
   <section class="section hero" id="about">
-    <h2>Mobile App Developer</h2>
-    <p>
-      Passionate Flutter Developer with experience building cross-platform apps using Dart, Firebase, and modern state management. Strong problem-solver, quick learner, and committed to writing clean and scalable code.
-    </p>
+    <h2>👋 Hi, I’m Hazem</h2>
+    <p>Mobile App Developer passionate about crafting high-performance Flutter apps. I love building cross-platform solutions that solve real problems, with clean code and beautiful UI/UX.</p>
+    <a class="btn" href="#projects">View My Work</a>
   </section>
 
   <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="card"><strong>Languages:</strong><br>Dart, Python, Java, C++</div>
-      <div class="card"><strong>Frameworks & Tools:</strong><br>Flutter, Firebase, REST APIs, Git/GitHub, Android Studio</div>
-      <div class="card"><strong>Soft Skills:</strong><br>Problem-solving, Team collaboration, Leadership, Time management</div>
-      <div class="card"><strong>Languages:</strong><br>Arabic (Native), English (C1), German (B1), French (A2)</div>
+    <h2>🚀 Skills</h2>
+    <div class="grid">
+      <div class="card"><h3>Languages</h3><p>Dart, Python, Java, C++</p></div>
+      <div class="card"><h3>Frameworks & Tools</h3><p>Flutter, Firebase, REST APIs, Git/GitHub, Android Studio</p></div>
+      <div class="card"><h3>Soft Skills</h3><p>Problem-solving, Teamwork, Leadership, Time Management</p></div>
+      <div class="card"><h3>Languages</h3><p>Arabic (Native), English (C1), German (B1), French (A2)</p></div>
     </div>
   </section>
 
   <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
+    <h2>💻 Projects</h2>
+    <div class="grid">
       <div class="card project">
-        <img src="https://via.placeholder.com/400x250" alt="Expense Manager">
-        <h3>Expense Manager App</h3>
+        <img src="https://via.placeholder.com/400x250/4facfe/ffffff?text=Expense+Manager" alt="Expense Manager">
+        <h3>Expense Manager</h3>
         <p>Manage expenses with a clean UI. Built using Flutter, Dart, Firebase.</p>
-        <a href="#" target="_blank">GitHub Repo</a>
+        <a href="#">GitHub Repo →</a>
       </div>
       <div class="card project">
-        <img src="https://via.placeholder.com/400x250" alt="Todo App">
+        <img src="https://via.placeholder.com/400x250/f093fb/ffffff?text=Todo+App" alt="Todo App">
         <h3>Todo App</h3>
         <p>Organize and track tasks effectively. Built with Flutter, Dart, State Management.</p>
-        <a href="#" target="_blank">GitHub Repo</a>
+        <a href="#">GitHub Repo →</a>
       </div>
       <div class="card project">
-        <img src="https://via.placeholder.com/400x250" alt="Notes App">
+        <img src="https://via.placeholder.com/400x250/ff9a9e/ffffff?text=Notes+App" alt="Notes App">
         <h3>Notes App</h3>
         <p>Create, update, and delete notes easily. Built with Flutter, Dart, Shared Preferences.</p>
-        <a href="#" target="_blank">GitHub Repo</a>
+        <a href="#">GitHub Repo →</a>
       </div>
     </div>
   </section>
 
   <section class="section" id="education">
-    <h2>Education & Experience</h2>
-    <div class="card">
-      <h3>Alexandria University – Faculty of Computer and Data Science</h3>
-      <p>2023–2027 (Expected) | CGPA: 3.7</p>
-    </div>
-    <div class="card" style="margin-top:1rem;">
-      <h3>Internship – Data Analyst, Control Union Egypt</h3>
-      <p>June – September 2025</p>
-    </div>
-  </section>
-
-  <section class="section" id="certificates">
-    <h2>Courses & Certificates</h2>
-    <div class="skills-grid">
-      <div class="card">DEPI Cross platform mobile app developer course (2025)</div>
-      <div class="card">Flutter & Dart Mobile Apps Certificate – IBM (2025)</div>
-      <div class="card">Creative Thinking – Imperial College London (2023)</div>
-      <div class="card">ICPC ECPC Qualifications – 58th Place (2024)</div>
+    <h2>🎓 Education & Experience</h2>
+    <div class="grid">
+      <div class="card"><h3>Alexandria University</h3><p>Faculty of Computer and Data Science, CGPA 3.7<br>(2023–2027 Expected)</p></div>
+      <div class="card"><h3>Internship – Control Union Egypt</h3><p>Data Analyst | June – September 2025</p></div>
     </div>
   </section>
 
   <section class="section" id="contact">
-    <h2>Contact</h2>
-    <div class="card">
+    <h2>📩 Contact</h2>
+    <div class="card" style="text-align:center;">
       <p>Email: <a href="mailto:thehazemmahdy@gmail.com">thehazemmahdy@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/hazem-mahdy-4545132b7/" target="_blank">linkedin.com/in/hazem-mahdy</a></p>
       <p>GitHub: <a href="https://github.com/TheHazemMahdy" target="_blank">github.com/TheHazemMahdy</a></p>
@@ -176,23 +158,19 @@
   </section>
 
   <footer>
-    <p>© 2025 Hazem Mahdy | Built with ❤️ using HTML, CSS & JS</p>
+    © 2025 Hazem Mahdy | Built with ❤️
   </footer>
 
   <script>
-    // Simple scroll animations
+    // Reveal cards on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.animation = "fadeIn 1s ease forwards";
+          entry.target.classList.add("visible");
         }
       });
     }, { threshold: 0.2 });
-
-    document.querySelectorAll(".card, .hero").forEach(el => {
-      el.style.opacity = 0;
-      observer.observe(el);
-    });
+    document.querySelectorAll(".card").forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
