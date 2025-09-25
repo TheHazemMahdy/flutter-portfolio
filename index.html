@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hazem Mahdy | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,10 +27,13 @@
       z-index:1000;
     }
     nav a {
-      text-decoration:none; color:var(--text-dark); font-weight:600;
-      transition:color 0.3s;
+      text-decoration:none; font-weight:600;
+      background: linear-gradient(90deg, #4facfe, #f093fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: opacity 0.3s;
     }
-    nav a:hover { color:var(--accent); }
+    nav a:hover { opacity:0.7; }
 
     /* HERO */
     header {
@@ -61,17 +64,12 @@
     .section h2 { text-align:center; margin-bottom:2rem; font-size:2rem; display:flex; align-items:center; justify-content:center; gap:0.6rem; }
 
     /* ICON ANIMATIONS */
-    .icon { color:var(--accent); }
+    .icon { background: linear-gradient(90deg, #4facfe, #f093fb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
     .bounce { animation: bounce 2s infinite; }
-    .spin { animation: spin 3s linear infinite; }
     .pulse { animation: pulse 2s infinite; }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      50% { transform: translateY(-6px); }
     }
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
@@ -179,7 +177,7 @@
 
   <!-- PROJECTS -->
   <section class="section" id="projects">
-    <h2><i class="fas fa-laptop-code icon spin"></i> Projects</h2>
+    <h2><i class="fas fa-laptop-code icon pulse"></i> Projects</h2>
     <div class="grid">
       <div class="card project">
         <img src="https://lh3.googleusercontent.com/w6DdFmSytcPQJKfDCaiOE-qbp3NtHWlZjNgD4dQKKTqFBvYaLJFhl760vEDfh7H0c9I=h900" alt="Expense Manager">
@@ -223,13 +221,12 @@
         <p><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/hazem-mahdy-4545132b7/" target="_blank"> LinkedIn</a></p>
       </div>
       <div class="contact-form">
-        <form action="https://formspree.io/f/yourFormID" method="POST">
+        <form action="https://formspree.io/f/mdkwkdwo" method="POST">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="email" name="email" placeholder="Your email" required>
           <textarea name="message" placeholder="How can we work together?" required></textarea>
           <button type="submit">Send</button>
         </form>
-        <p style="font-size:0.8rem; color:#444; margin-top:0.5rem;">(Tip: replace this form with a real service like Formspree or Netlify Forms when deployed.)</p>
       </div>
     </div>
   </section>
