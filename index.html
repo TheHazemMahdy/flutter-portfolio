@@ -5,58 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hazem Mahdy | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --bg-gradient: linear-gradient(135deg, #4facfe 0%, #f093fb 100%);
       --card: #ffffff;
+      --card-dark: #1e1e1e;
       --accent: #4facfe;
       --accent2: #f093fb;
       --text-dark: #1f2937;
       --text-light: #6b7280;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-gradient);
-      color: var(--text-dark);
-    }
+    body { font-family:'Poppins',sans-serif; background:var(--bg-gradient); color:var(--text-dark); }
 
-    /* Header */
+    /* HEADER HERO */
     header {
-      position: fixed;
-      top:0; left:0; right:0;
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display:flex; justify-content:space-between; align-items:center;
-      padding: 1rem 2rem;
-      z-index:100;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:6rem 2rem 4rem;
+      background:white;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
-    header h1 { font-size:1.4rem; background:var(--bg-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-    nav a {
-      margin-left:1rem; text-decoration:none; font-weight:600; color:var(--text-dark);
-      transition: color 0.3s;
+    header img {
+      width:160px; height:160px; border-radius:50%; border:4px solid var(--accent);
+      object-fit:cover; margin-bottom:1rem;
     }
-    nav a:hover { color: var(--accent); }
+    header h1 { font-size:2.2rem; margin-bottom:0.5rem; }
+    header h2 { color:var(--text-light); font-size:1.2rem; margin-bottom:1.5rem; }
+    .header-buttons a {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      padding:0.6rem 1.2rem; margin:0.3rem;
+      border-radius:8px; font-weight:600; color:white; text-decoration:none;
+      transition:transform 0.3s;
+    }
+    .header-buttons a:hover { transform:translateY(-3px); }
+    .linkedin { background:#0a66c2; }
+    .github { background:#333; }
 
-    /* Sections */
-    .section { max-width:1100px; margin:auto; padding:6rem 2rem; }
-    .hero {
-      min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
-      text-align:center;
-      animation: fadeIn 1.5s ease;
-    }
-    .hero h2 { font-size:2.5rem; margin-bottom:1rem; }
-    .hero p { font-size:1.1rem; color:var(--text-light); max-width:700px; }
+    /* SECTION */
+    .section { max-width:1100px; margin:auto; padding:4rem 2rem; }
+    .section h2 { text-align:center; margin-bottom:2rem; font-size:2rem; }
 
-    .btn {
-      display:inline-block; margin-top:2rem; padding:0.75rem 1.5rem;
-      background: var(--bg-gradient); color:white; font-weight:600; border-radius:50px;
-      text-decoration:none; transition: transform 0.3s;
-    }
-    .btn:hover { transform: scale(1.05); }
-
-    /* Cards */
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:2rem; margin-top:2rem; }
+    /* CARDS */
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
     .card {
       background:var(--card); border-radius:16px; padding:1.5rem;
       box-shadow:0 10px 20px rgba(0,0,0,0.1);
@@ -67,7 +58,7 @@
     .card h3 { margin-bottom:0.5rem; }
     .card p { color:var(--text-light); }
 
-    /* Projects */
+    /* PROJECTS */
     .project img {
       width:100%; border-radius:12px; margin-bottom:1rem;
       transition: transform 0.3s;
@@ -77,34 +68,52 @@
       display:inline-block; margin-top:0.5rem; color:var(--accent); text-decoration:none; font-weight:600;
     }
 
-    /* Footer */
-    footer {
-      text-align:center; padding:2rem; color:var(--text-light);
-      background: rgba(255,255,255,0.5);
+    /* CONTACT */
+    #contact { background:#111; color:white; padding:4rem 2rem; }
+    #contact h2 { margin-bottom:2rem; }
+    .contact-grid {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+      gap:2rem; max-width:1000px; margin:auto;
     }
+    .contact-info, .contact-form {
+      background:var(--card-dark); padding:2rem; border-radius:12px;
+    }
+    .contact-info p { margin:0.5rem 0; }
+    .contact-info a { color:#4facfe; text-decoration:none; }
+    .contact-info i { margin-right:0.5rem; }
+    .contact-form form { display:flex; flex-direction:column; gap:1rem; }
+    .contact-form input, .contact-form textarea {
+      width:100%; padding:0.8rem; border:none; border-radius:8px;
+      background:#222; color:white; font-size:1rem;
+    }
+    .contact-form textarea { resize:none; height:120px; }
+    .contact-form button {
+      background:#4facfe; color:white; font-weight:600; padding:0.8rem; border:none;
+      border-radius:8px; cursor:pointer; transition:background 0.3s;
+    }
+    .contact-form button:hover { background:#357abd; }
 
-    /* Animations */
+    /* FOOTER */
+    footer { text-align:center; padding:1.5rem; background:#000; color:#aaa; }
+
+    /* ANIMATIONS */
     @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
   </style>
 </head>
 <body>
+
+  <!-- HERO HEADER -->
   <header>
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQE9jibdRlyJsQ/profile-displayphoto-crop_800_800/B56Zgm2n_5G4AM-/0/1752998511457?e=1761782400&v=beta&t=KR3iG5k9_x3likoxTOYdPephUMT9q-KEyfncULH7Xw4" alt="Hazem Mahdy">
     <h1>Hazem Mahdy</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h2>Mobile App Developer</h2>
+    <div class="header-buttons">
+      <a href="https://www.linkedin.com/in/hazem-mahdy-4545132b7/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/TheHazemMahdy" target="_blank" class="github"><i class="fab fa-github"></i> GitHub</a>
+    </div>
   </header>
 
-  <section class="section hero" id="about">
-    <h2>👋 Hi, I’m Hazem</h2>
-    <p>Mobile App Developer passionate about crafting high-performance Flutter apps. I love building cross-platform solutions that solve real problems, with clean code and beautiful UI/UX.</p>
-    <a class="btn" href="#projects">View My Work</a>
-  </section>
-
+  <!-- SKILLS -->
   <section class="section" id="skills">
     <h2>🚀 Skills</h2>
     <div class="grid">
@@ -115,6 +124,7 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section class="section" id="projects">
     <h2>💻 Projects</h2>
     <div class="grid">
@@ -139,6 +149,7 @@
     </div>
   </section>
 
+  <!-- EDUCATION -->
   <section class="section" id="education">
     <h2>🎓 Education & Experience</h2>
     <div class="grid">
@@ -147,13 +158,26 @@
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <!-- CONTACT -->
+  <section id="contact">
     <h2>📩 Contact</h2>
-    <div class="card" style="text-align:center;">
-      <p>Email: <a href="mailto:thehazemmahdy@gmail.com">thehazemmahdy@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/hazem-mahdy-4545132b7/" target="_blank">linkedin.com/in/hazem-mahdy</a></p>
-      <p>GitHub: <a href="https://github.com/TheHazemMahdy" target="_blank">github.com/TheHazemMahdy</a></p>
-      <p>Phone: +20 127 279 5664</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>I’m open to internships, freelance projects, and collaborations in app development.</p>
+        <p><i class="fas fa-envelope"></i><a href="mailto:thehazemmahdy@gmail.com"> thehazemmahdy@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Alexandria, Egypt</p>
+        <p><i class="fas fa-phone"></i><a href="tel:+201272795664"> +20 127 279 5664</a></p>
+        <p><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/hazem-mahdy-4545132b7/" target="_blank"> LinkedIn</a></p>
+      </div>
+      <div class="contact-form">
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="How can we work together?" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <p style="font-size:0.8rem; color:#888; margin-top:0.5rem;">(Tip: replace this form with a real service like Formspree or Netlify Forms when deployed.)</p>
+      </div>
     </div>
   </section>
 
