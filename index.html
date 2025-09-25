@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hazem Mahdy | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #06b6d4;
+      --accent2: #7c3aed;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    header h1 { font-size: 1.5rem; color: var(--accent); }
+    nav a {
+      color: var(--text);
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent2); }
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+    .hero {
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .hero h2 { font-size: 2.2rem; }
+    .hero p { color: var(--muted); margin-top: 1rem; }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      border-top: 1px solid #1e293b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hazem Mahdy</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section hero" id="about">
+    <h2>Mobile App Developer</h2>
+    <p>
+      Passionate Flutter Developer with experience building cross-platform apps using Dart, Firebase, and modern state management. Strong problem-solver, quick learner, and committed to writing clean and scalable code.
+    </p>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="card"><strong>Languages:</strong><br>Dart, Python, Java, C++</div>
+      <div class="card"><strong>Frameworks & Tools:</strong><br>Flutter, Firebase, REST APIs, Git/GitHub, Android Studio</div>
+      <div class="card"><strong>Soft Skills:</strong><br>Problem-solving, Team collaboration, Leadership, Time management</div>
+      <div class="card"><strong>Languages:</strong><br>Arabic (Native), English (C1), German (B1), French (A2)</div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="card project">
+        <img src="https://via.placeholder.com/400x250" alt="Expense Manager">
+        <h3>Expense Manager App</h3>
+        <p>Manage expenses with a clean UI. Built using Flutter, Dart, Firebase.</p>
+        <a href="#" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="card project">
+        <img src="https://via.placeholder.com/400x250" alt="Todo App">
+        <h3>Todo App</h3>
+        <p>Organize and track tasks effectively. Built with Flutter, Dart, State Management.</p>
+        <a href="#" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="card project">
+        <img src="https://via.placeholder.com/400x250" alt="Notes App">
+        <h3>Notes App</h3>
+        <p>Create, update, and delete notes easily. Built with Flutter, Dart, Shared Preferences.</p>
+        <a href="#" target="_blank">GitHub Repo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <h2>Education & Experience</h2>
+    <div class="card">
+      <h3>Alexandria University – Faculty of Computer and Data Science</h3>
+      <p>2023–2027 (Expected) | CGPA: 3.7</p>
+    </div>
+    <div class="card" style="margin-top:1rem;">
+      <h3>Internship – Data Analyst, Control Union Egypt</h3>
+      <p>June – September 2025</p>
+    </div>
+  </section>
+
+  <section class="section" id="certificates">
+    <h2>Courses & Certificates</h2>
+    <div class="skills-grid">
+      <div class="card">DEPI Cross platform mobile app developer course (2025)</div>
+      <div class="card">Flutter & Dart Mobile Apps Certificate – IBM (2025)</div>
+      <div class="card">Creative Thinking – Imperial College London (2023)</div>
+      <div class="card">ICPC ECPC Qualifications – 58th Place (2024)</div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:thehazemmahdy@gmail.com">thehazemmahdy@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/hazem-mahdy-4545132b7/" target="_blank">linkedin.com/in/hazem-mahdy</a></p>
+      <p>GitHub: <a href="https://github.com/TheHazemMahdy" target="_blank">github.com/TheHazemMahdy</a></p>
+      <p>Phone: +20 127 279 5664</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Hazem Mahdy | Built with ❤️ using HTML, CSS & JS</p>
+  </footer>
+
+  <script>
+    // Simple scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = "fadeIn 1s ease forwards";
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".card, .hero").forEach(el => {
+      el.style.opacity = 0;
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
